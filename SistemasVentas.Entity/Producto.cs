@@ -1,0 +1,43 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace SistemaVentas.Entity;
+
+public partial class Producto
+{
+    public int Idproducto { get; set; }
+
+    public string? CodigoBarra { get; set; }
+
+    public int? IdMarca { get; set; }
+
+    public string? Descripcion { get; set; }
+
+    public int? IdCategoria { get; set; }
+
+    public int? Stock { get; set; }
+
+    public string? UrlImagen { get; set; }
+
+    public string? NombreImagen { get; set; }
+
+    public decimal? Precio { get; set; }
+
+    public bool? EsActivo { get; set; }
+
+    public int? IdProveedor { get; set; }
+
+    public DateTime? FechaRegistro { get; set; }
+
+    public int? IdUsuarioRegistro { get; set; }
+
+    public DateTime? FechaModificacion { get; set; }
+
+    public virtual ICollection<DetalleVenta> DetalleVenta { get; set; } = new List<DetalleVenta>();
+
+    public virtual Categoria? IdCategoriaNavigation { get; set; }
+
+    public virtual MarcaProducto? IdMarcaNavigation { get; set; }
+
+    public virtual Proveedor? IdProveedorNavigation { get; set; }
+}
