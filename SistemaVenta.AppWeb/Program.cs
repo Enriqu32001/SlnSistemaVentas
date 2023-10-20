@@ -33,9 +33,9 @@ builder.Services.InyectarDependencia(builder.Configuration);
 //Inyectado la config dentro de automapper, para usarlo en todo el proy
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
-var context = new CustomAssemblyLoadContext();
+/*var context = new CustomAssemblyLoadContext();
 context.LoadUnmanagedLibrary(Path.Combine(Directory.GetCurrentDirectory(), "Utilidades/libreriaPDF/libwkhtmltox.dll"));
-builder.Services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
+builder.Services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));*/
 
 var app = builder.Build();
 
